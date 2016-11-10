@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "963690791920",
+    "firebase_url": "https://validador-2ccff.firebaseio.com",
+    "project_id": "validador-2ccff",
+    "storage_bucket": "validador-2ccff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963690791920:android:c377cc4075255be2",
+        "android_client_info": {
+          "package_name": "br.com.helpdev.validador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963690791920-3q1laum1il8dmfqlp5ja0o0vp958a6jg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHY9ySO_Mtna0BnCJsU_G2g_lJPP7KC60"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

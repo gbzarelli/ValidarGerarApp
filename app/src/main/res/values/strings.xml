@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Validador e Gerador</string>
+    <string name="app_name">Validar e Gerar</string>
+    <string name="title_activity_teste">teste</string>
+    <string name="action_settings">Settings</string>
 </resources>
