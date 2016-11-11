@@ -2,4 +2,24 @@
     <string name="app_name">Validar e Gerar</string>
     <string name="title_activity_teste">teste</string>
     <string name="action_settings">Settings</string>
+    <string name="documento">Documento:</string>
+    <string name="acao">Ação:</string>
+    <string name="validar">VALIDAR</string>
+    <string name="gerar">GERAR</string>
+    <string name="valor_gerado_com_sucesso">Valor gerado com sucesso</string>
+    <string name="clique_para_copiar">clique para copiar</string>
+    <string name="hint_valor_doc">Entre com o valor do documento</string>
+    <string name="entre_com_valor">Entre com um valor</string>
+    <string name="descricao_credito">BANDEIRA: %s</string>
+    <string name="valor_copiado">Valor copiado</string>
+    <string name="valor_valido">VALOR VÁLIDO</string>
+    <string name="valor_invalido">VALOR INVÁLIDO</string>
+
+    <string-array name="lista_tipo_doc">
+        <item>CPF</item>
+        <item>CNPJ</item>
+        <item>PIS</item>
+        <item>CARTÃO DE CREDITO</item>
+        <item>RENAVAM</item>
+    </string-array>
 </resources>

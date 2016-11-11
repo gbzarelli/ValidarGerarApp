@@ -1,11 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:text="VALIDADOR"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/documento"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+    <Spinner
+        android:id="@+id/sp_docs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/lista_tipo_doc"
+        android:paddingTop="10dp"
+        android:spinnerMode="dialog"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="@string/acao"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <RadioButton
+            android:id="@+id/rb_validar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:checked="true"
+            android:text="@string/validar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+
+        <RadioButton
+            android:id="@+id/rb_gerar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gerar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/layout_validar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/edit_valor_doc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_valor_doc"
+            android:inputType="numberDecimal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <Button
+            android:id="@+id/bt_validar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/validar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/tv_resultado_validar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_gerar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/bt_gerar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gerar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <LinearLayout
+            android:id="@+id/layout_valor_gerado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/valor_gerado_com_sucesso"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/tv_resultado_gerar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/tv_resultado_gerar_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/clique_para_copiar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
