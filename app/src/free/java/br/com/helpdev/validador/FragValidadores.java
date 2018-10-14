@@ -14,7 +14,7 @@ public class FragValidadores extends FragValidadoresAbs {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        AdView mAdView = (AdView) view.findViewById(R.id.adView);
+        AdView mAdView = view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .addTestDevice("ED22D380D881867345E6858189EB4D35")
