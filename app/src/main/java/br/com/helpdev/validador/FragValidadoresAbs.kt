@@ -118,7 +118,7 @@ abstract class FragValidadoresAbs : Fragment(), View.OnClickListener, RadioGroup
             tv_resultado_validar.setTextColor(Color.RED)
             getString(R.string.valor_invalido) + addMessage
         }
-        tv_resultado_validar.text = addMessage
+        tv_resultado_validar.text = addMessage.trim()
     }
 
     private fun setClipboard(text: String) {
