@@ -21,15 +21,15 @@ android {
         }
     }
 
-    flavorDimensions "mode"
+    flavorDimensions "default"
 
     productFlavors {
         paid {
-            dimension "mode"
+            dimension "default"
             applicationId "br.com.helpdev.validador"
         }
         free {
-            dimension "mode"
+            dimension "default"
             applicationId "br.com.helpdev.validador.free"
         }
     }
