@@ -15,11 +15,18 @@
     <string name="valor_valido">VALOR VÁLIDO</string>
     <string name="valor_invalido">VALOR INVÁLIDO</string>
 
+    <string name="cpf">CPF</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="pis">PIS</string>
+    <string name="credit_card">CARTÃO DE CREDITO</string>
+    <string name="renavan">RENAVAM</string>
+
+
     <string-array name="lista_tipo_doc">
-        <item>CPF</item>
-        <item>CNPJ</item>
-        <item>PIS</item>
-        <item>CARTÃO DE CREDITO</item>
-        <item>RENAVAM</item>
+        <item>@string/cpf</item>
+        <item>@string/cnpj</item>
+        <item>@string/pis</item>
+        <item>@string/credit_card</item>
+        <item>@string/renavan</item>
     </string-array>
 </resources>
