@@ -179,6 +179,8 @@
 - Consumes: accepted AABs, signing, AdMob configuration, and completed Play setup from Tasks 5–7.
 - Produces: both apps approved through closed testing, production submissions, and confirmed public Play listings.
 
+> **Release-path exception (2026-10-14):** At the user's explicit direction, both final AABs were submitted directly to the Brazil-only production tracks for Google Play review. This bypasses the closed-testing and pre-launch validation gates below; those checks were not completed and must not be described as passed. Both releases are still awaiting Google's review. The Free release also remains gated on AdMob app verification and consent-message setup before ad serving is considered ready.
+
 - [ ] **Step 1: Enable Play App Signing, enroll the upload certificates, register both package names/certificates in Android developer verification, then upload the final paid and free AABs to closed testing tracks**; configure tester access and country availability as shown in the account.
 - [ ] **Step 2: Install from Play closed-test links on API 24 and API 36 devices**; verify validate/generate flows, clipboard, rotation, consent UI, banner loading, and no ad view/request in paid.
 - [ ] **Step 3: Review each Play pre-launch report, Android vitals, policy status, and AdMob policy center**; resolve every blocking warning before continuing.
