@@ -5,6 +5,13 @@
 /.idea/libraries
 .DS_Store
 /build
+/android-keys/
+/.kotlin/
+*.jks
+*.keystore
+*.p12
+*.pass
+signing*.properties
 /captures
 .externalNativeBuild
 /.idea/

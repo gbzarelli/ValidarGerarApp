@@ -36,9 +36,11 @@ Modernizar o aplicativo Android Validar e Gerar e preparar duas novas publicaç�
 
 ### Build Android
 
-Atualizar Gradle Wrapper, Android Gradle Plugin, Kotlin e plugins Google para versões estáveis compatíveis entre si e com JDK 17 ou superior. A baseline pesquisada para esta atualização é Gradle 9.6.0, Android Gradle Plugin 9.4.0 e Kotlin Gradle Plugin 2.4.10. Migrar as bibliotecas Android Support para AndroidX. Fixar `compileSdk 36`, `targetSdk 36` e `minSdk 24`. A migração preservará o desenho atual de um módulo e duas flavors, evitando reestruturação que não seja necessária para compilar e publicar.
+Atualizar Gradle Wrapper, Android Gradle Plugin, Kotlin e plugins Google para versões estáveis compatíveis entre si e com JDK 17 ou superior. A baseline pesquisada é Gradle 9.6.0 e Android Gradle Plugin 9.4.0, que inclui suporte Kotlin integrado; portanto, não se aplica o plugin `org.jetbrains.kotlin.android` separadamente. Migrar as bibliotecas Android Support para AndroidX. Fixar `compileSdk 36`, `targetSdk 36` e `minSdk 24`. A migração preservará o desenho atual de um módulo e duas flavors, evitando reestruturação que não seja necessária para compilar e publicar.
 
 Revisar a dependência `LibValidadores` e o uso de Kotlin synthetic Android Extensions. Substituir APIs removidas ou incompatíveis, atualizar recursos/manifestos e corrigir avisos que afetem funcionamento ou submissão. Manter shrink/minify de release apenas depois de provar que os fluxos continuam funcionando no artefato minificado.
+
+Como apps que miram API 35+ são edge-to-edge por padrão no Android 15+, aplicar os `WindowInsets` das barras do sistema e do recorte de tela ao contêiner principal, preservando os paddings existentes. A validação deve comprovar que o conteúdo não fica atrás da status bar nos dois flavors.
 
 Auditar se Firebase é utilizado além do SDK antigo de anúncios. Remover o Google Services plugin e os arquivos `google-services.json` das variantes se não houver serviços Firebase ativos; caso algum serviço seja encontrado em uso real, migrar somente esse serviço e manter sua configuração por flavor.
 
