@@ -1,14 +1,18 @@
 package br.com.helpdev.validador
 
 
-import android.support.test.InstrumentationRegistry
-import android.support.test.filters.LargeTest
-import android.support.test.rule.ActivityTestRule
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.filters.LargeTest
+import androidx.test.rule.ActivityTestRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import br.com.helpdev.libvalidadores.CNPJ
 import br.com.helpdev.libvalidadores.CPF
+import br.com.helpdev.libvalidadores.CreditCard
 import br.com.helpdev.libvalidadores.PIS
 import br.com.helpdev.libvalidadores.RENAVAM
+import br.com.helpdev.validador.EspressoUtils.checkErrorText
 import br.com.helpdev.validador.EspressoUtils.inputTextAndCloseKeyboard
 import br.com.helpdev.validador.EspressoUtils.performClickAndCheckStringOfView
 import br.com.helpdev.validador.EspressoUtils.checkIsDisplayedViewFromId
@@ -36,13 +40,27 @@ class MainActivityTest {
 
     @Test
     fun useAppContext() {
-        val appContext = InstrumentationRegistry.getTargetContext()
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         Assert.assertTrue(appContext.packageName.startsWith(PACKAGE))
     }
 
     @Test
     fun app_ShouldDisplay_DefaultScreen_Successfully() {
         checkIsDisplayedViewFromId(R.id.layout_validar)
+    }
+
+    @Test
+    fun contentStartsBelowStatusBar() {
+        androidx.test.espresso.Espresso.onView(androidx.test.espresso.matcher.ViewMatchers.withId(R.id.activity_main))
+                .check { view, _ ->
+                    val topInset = ViewCompat.getRootWindowInsets(view)
+                            ?.getInsets(WindowInsetsCompat.Type.statusBars())?.top ?: 0
+                    val originalPadding = view.resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
+                    Assert.assertTrue(
+                            "Main content should include the status-bar inset",
+                            view.paddingTop >= originalPadding + topInset
+                    )
+                }
     }
 
     @Test
@@ -85,6 +103,39 @@ class MainActivityTest {
         performClickSpinnerAndCheckValue(R.id.sp_docs, 2, R.string.pis)
         performGenerateAndCheckLayout()
         assert(PIS.validatePIS(getTextFromResId(R.id.tv_resultado_gerar)))
+    }
+
+    @Test
+    fun canValidateAndGenerateEachDocumentType() {
+        val validators = listOf<(String) -> Boolean>(
+                { CPF.validateCPF(it) },
+                { CNPJ.validateCNPJ(it) },
+                { PIS.validatePIS(it) },
+                { CreditCard.isValidCreditCardNumber(it) },
+                { RENAVAM.validateRENAVAM(it) }
+        )
+        val labels = listOf(R.string.cpf, R.string.cnpj, R.string.pis, R.string.credit_card, R.string.renavan)
+
+        validators.forEachIndexed { position, validator ->
+            performClickSpinnerAndCheckValue(R.id.sp_docs, position, labels[position])
+            performGenerateAndCheckLayout()
+            Assert.assertTrue("Generated document at position $position should validate", validator(getTextFromResId(R.id.tv_resultado_gerar)))
+        }
+    }
+
+    @Test
+    fun emptyDocumentShowsRequiredError() {
+        performClickAndCheckStringOfView(R.id.bt_validar, R.string.validar)
+        checkErrorText(R.id.edit_valor_doc, R.string.entre_com_valor)
+    }
+
+    @Test
+    fun fragmentWorksAfterActivityRecreation() {
+        mActivityTestRule.activity.runOnUiThread { mActivityTestRule.activity.recreate() }
+        checkIsDisplayedViewFromId(R.id.layout_validar)
+        inputTextAndCloseKeyboard(R.id.edit_valor_doc, VALID_CPF)
+        performClickAndCheckStringOfView(R.id.bt_validar, R.string.validar)
+        matchesText(R.id.tv_resultado_validar, R.string.valor_valido)
     }
 
 

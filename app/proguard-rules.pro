@@ -9,6 +9,9 @@
 
 # Add any project specific keep options here:
 
+# Room instantiates this generated WorkManager database implementation by name.
+-keep class androidx.work.impl.WorkDatabase_Impl { *; }
+
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
 # class:

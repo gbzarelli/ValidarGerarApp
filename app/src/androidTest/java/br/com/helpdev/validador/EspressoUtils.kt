@@ -1,13 +1,14 @@
 package br.com.helpdev.validador
 
-import android.support.annotation.IntegerRes
-import android.support.annotation.StringRes
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.action.ViewActions
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.matcher.ViewMatchers
+import androidx.annotation.IntegerRes
+import androidx.annotation.StringRes
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.platform.app.InstrumentationRegistry
 import android.view.View
 import android.widget.TextView
 import org.hamcrest.Matcher
@@ -18,6 +19,12 @@ object EspressoUtils {
     fun matchesText(@IntegerRes resIdTextView: Int, @StringRes resIdString: Int) {
         Espresso.onView(Matchers.allOf(ViewMatchers.withId(resIdTextView), ViewMatchers.isDisplayed()))
                 .check(ViewAssertions.matches(ViewMatchers.withText(resIdString)))
+    }
+
+    fun checkErrorText(@IntegerRes resIdEdit: Int, @StringRes resIdString: Int) {
+        val expected = InstrumentationRegistry.getInstrumentation().targetContext.getString(resIdString)
+        Espresso.onView(Matchers.allOf(ViewMatchers.withId(resIdEdit), ViewMatchers.isDisplayed()))
+                .check(ViewAssertions.matches(ViewMatchers.hasErrorText(expected)))
     }
 
     fun inputTextAndCloseKeyboard(@IntegerRes resIdEdit: Int, value: String) {
