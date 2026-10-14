@@ -185,7 +185,7 @@
 - [ ] **Step 2: Install from Play closed-test links on API 24 and API 36 devices**; verify validate/generate flows, clipboard, rotation, consent UI, banner loading, and no ad view/request in paid.
 - [ ] **Step 3: Review each Play pre-launch report, Android vitals, policy status, and AdMob policy center**; resolve every blocking warning before continuing.
 - [ ] **Step 4: Confirm required closed-testing duration and tester counts shown by Play Console**; preserve evidence that requirements are satisfied.
-- [ ] **Step 5: Request final user confirmation immediately before submitting each release to production review**; expected: confirmation names the app, package, track, and exact AAB.
+- [x] **Step 5: Request final user confirmation immediately before submitting each release to production review**; the user authorized the Paid release (`br.com.helpdev.validador.v2`) and separately authorized the Free release (`br.com.helpdev.validador.v2.free`), both on the Brazil-only production track.
 - [ ] **Step 6: After Google approval, verify both public listing URLs, installability, paid purchase flow, and free ad consent/serving**; record final version and rollout status.
 
 ---
