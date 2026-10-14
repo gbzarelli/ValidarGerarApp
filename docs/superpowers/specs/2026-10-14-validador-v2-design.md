@@ -13,7 +13,7 @@ Modernizar o aplicativo Android Validar e Gerar e preparar duas novas publicaç�
 
 - Manter o nome público “Validar e Gerar Documentos” nas duas fichas, se a Play Console aceitar nomes iguais para os novos apps.
 - Manter um único projeto Android e suas duas product flavors.
-- Usar `minSdk 23` (Android 6.0) nas duas variantes.
+- Usar `minSdk 24` (Android 7.0) nas duas variantes. Esta decisão substitui a aprovação anterior de API 23 porque o Google Mobile Ads SDK 25.5.0 requer API 24.
 - Usar `compileSdk 36` e `targetSdk 36` como baseline de envio, conforme a exigência de API alvo observada na conta e na política da Play vigente em 14 de outubro de 2026.
 - Criar fichas novas na Play para os dois pacotes. Não reutilizar as fichas antigas: a ficha gratuita antiga foi removida e a paga está suspensa.
 - Habilitar Play App Signing para cada novo app e gerar chaves de upload novas, guardadas fora do repositório. Não depender dos keystores antigos nem de arquivo de senha legado.
@@ -36,7 +36,7 @@ Modernizar o aplicativo Android Validar e Gerar e preparar duas novas publicaç�
 
 ### Build Android
 
-Atualizar Gradle Wrapper, Android Gradle Plugin, Kotlin e plugins Google para versões estáveis compatíveis entre si e com JDK 17 ou superior. Migrar as bibliotecas Android Support para AndroidX. Fixar `compileSdk 36`, `targetSdk 36` e `minSdk 23`. A migração preservará o desenho atual de um módulo e duas flavors, evitando reestruturação que não seja necessária para compilar e publicar.
+Atualizar Gradle Wrapper, Android Gradle Plugin, Kotlin e plugins Google para versões estáveis compatíveis entre si e com JDK 17 ou superior. A baseline pesquisada para esta atualização é Gradle 9.6.0, Android Gradle Plugin 9.4.0 e Kotlin Gradle Plugin 2.4.10. Migrar as bibliotecas Android Support para AndroidX. Fixar `compileSdk 36`, `targetSdk 36` e `minSdk 24`. A migração preservará o desenho atual de um módulo e duas flavors, evitando reestruturação que não seja necessária para compilar e publicar.
 
 Revisar a dependência `LibValidadores` e o uso de Kotlin synthetic Android Extensions. Substituir APIs removidas ou incompatíveis, atualizar recursos/manifestos e corrigir avisos que afetem funcionamento ou submissão. Manter shrink/minify de release apenas depois de provar que os fluxos continuam funcionando no artefato minificado.
 
@@ -44,7 +44,7 @@ Auditar se Firebase é utilizado além do SDK antigo de anúncios. Remover o Goo
 
 ### Anúncios e privacidade
 
-Atualizar a integração da flavor `free` ao Google Mobile Ads SDK atual compatível com a baseline Android. Obter do novo registro AdMob o App ID e a unidade de banner e injetá-los por recursos/manifest da flavor `free`, sem valores de produção na variante `paid`. Inicializar o SDK uma vez no ciclo de vida apropriado e gerenciar o ciclo de vida do banner.
+Atualizar a integração da flavor `free` para `com.google.android.gms:play-services-ads:25.5.0`, que requer `minSdk 24`. Obter do novo registro AdMob o App ID e a unidade de banner e injetá-los por recursos/manifest da flavor `free`, sem valores de produção na variante `paid`. Inicializar o SDK uma vez no ciclo de vida apropriado e gerenciar o ciclo de vida do banner.
 
 Integrar o fluxo de consentimento exigido para regiões aplicáveis usando a solução atual do Google para consentimento. Atualizar a política de privacidade e as declarações de Segurança dos Dados com base nos SDKs e no comportamento efetivamente observado no AAB. Não publicar IDs de teste como IDs de produção; manter IDs de teste nos builds de desenvolvimento/teste e usar o novo ID somente após a validação AdMob.
 
@@ -76,9 +76,9 @@ Criação de fichas, chaves de assinatura, unidades de anúncio, uploads e envio
 ## Critérios de aceite
 
 - `freeDebug`, `paidDebug`, `freeRelease` e `paidRelease` configuram e compilam com o toolchain suportado pelo projeto; releases produzem AABs instaláveis/aceitos nos fluxos de teste da Play.
-- Os AABs declaram os pacotes exatos aprovados, target API 36 e min API 23.
+- Os AABs declaram os pacotes exatos aprovados, target API 36 e min API 24.
 - A edição paga não contém o SDK Mobile Ads, IDs, views, inicialização ou solicitações de anúncio. A edição gratuita inicializa o SDK corretamente, solicita consentimento quando necessário e carrega o banner sem erro de configuração.
-- Os fluxos centrais de validação e geração de documentos passam testes automatizados e validação manual em Android 6 (API 23) e Android 16 (API 36), incluindo release minificado.
+- Os fluxos centrais de validação e geração de documentos passam testes automatizados e validação manual em Android 7 (API 24) e Android 16 (API 36), incluindo release minificado.
 - Play App Signing, chaves de upload e registro Android developer verification estão prontos para ambos os apps; nenhum material secreto está versionado.
 - As fichas da Play e do AdMob estão preenchidas com informações compatíveis com o app final; teste fechado e pré-lançamento não mostram falhas bloqueadoras.
 - A produção só é considerada concluída quando ambas as fichas aprovarem as revisões e estiverem disponíveis no Google Play.
