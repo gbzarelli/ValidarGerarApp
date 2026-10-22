@@ -18,12 +18,12 @@ The existing Free upload key is reused to upload the new V3 app. Play App Signin
 
 ## Local validation artifacts
 
-- [ ] Run `ANDROID_KEYS_DIR=/Volumes/gbz-ext/repositories/helpdev/android-keys ./gradlew bundleFreeRelease` after the V3 AdMob IDs and consent setup are ready.
+- [ ] Run `ANDROID_KEYS_DIR=/Volumes/gbz-ext/repositories/helpdev/android-keys ./gradlew bundleFreeRelease` after UMP consent setup is ready.
 - [ ] Inspect package/version/SDK identity and signing in the Free V3 AAB.
 - [ ] Run release instrumentation on API 24 and API 36. The earlier API 35 minified APK launch succeeded for Free; API 24/36 images are unavailable, and the debug instrumentation APK cannot load all test-runner classes against the minified release target.
 - [x] The earlier free validation AAB used Google's official sample AdMob App ID and banner unit ID. API 35 release smoke testing displayed the labeled Google test banner. That bundle is stale for submission and must not be uploaded to Play.
-- [ ] Create a new AdMob app and banner unit for `br.com.helpdev.validador.v3`; use production IDs only in Free release resources and Google's sample IDs only in debug.
-- [ ] Complete the free AdMob consent message and wait for app approval before any ad-supported test upload.
+- [x] Create a new AdMob app and banner unit for `br.com.helpdev.validador.v3`; production IDs are scoped to Free release resources and Google's sample IDs only to debug.
+- [ ] Complete the Free AdMob consent message and link the Play listing for AdMob app review before any ad-supported test upload.
 - [ ] In Play App Signing enrollment, provide the matching upload certificate for the new package and separately record the Play-generated app-signing certificate fingerprint.
 
 ## Artifact outputs

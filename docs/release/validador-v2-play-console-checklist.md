@@ -32,8 +32,9 @@ The previous Paid listing stated that values were processed locally and there we
 
 - Play App Signing identity and Android developer verification still require verification for the new app record before release.
 - The previous Paid price was saved at R$ 2,00 in Brazil with automatic regional conversions. The paid edition is discontinued; no paid price or product will be configured for V3.
-- The existing AdMob app `Validar e Gerar Documentos V2 Free Android` is still marked **Requires review**. Do not reuse its production app/ad IDs in V3. New V3 AdMob app/unit and consent configuration are unverified.
-- New V3 production ad identifiers must replace the old V2 IDs in the Free release resources before creating a release AAB.
+- The existing AdMob app `Validar e Gerar Documentos V2 Free Android` remains **Requires review**; its IDs were not reused.
+- AdMob V3 app `Validador de documentos V3 Android` was created as not yet listed (App ID `ca-app-pub-4334384724173584~6417805276`) with banner unit `ca-app-pub-4334384724173584/5605171079`. AdMob says a new unit may take up to an hour to start serving; link the app to the published Google Play listing later to start review and remove limited serving.
+- The Free release resources now use the V3 app/banner IDs; the Free debug resources retain Google's official test IDs. UMP consent message configuration remains a release gate.
 
 ## Ficha da Play e capturas de tela
 
