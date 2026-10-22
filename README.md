@@ -1,22 +1,24 @@
-## Validar e Gerar Documentos
+## Validador de documentos
 
-Este aplicativo foi destinado a realização de validações e gerações de documentos; 
-O Aplicativo conta com as funcionalidades de gerar e validar os seguintes documentos:
-- CNPJ  - CPF  - RENAVAM  - PIS  - CARTÃO DE CREDITO  
+Aplicativo Android de validação local de formato e dígitos verificadores para CPF, CNPJ (inclusive alfanumérico), PIS e RENAVAM. Os dados digitados são processados no dispositivo.
 
-IMPORTANTE: Nosso gerador tem como intenção ajudar estudantes, programadores, analistas e testadores a gerar documentos válidos. 
-Normalmente necessários parar testar seus softwares em desenvolvimento. 
-A má utilização dos dados aqui gerados é de total responsabilidade do usuário.  
-Os números são gerados de forma aleatória, respeitando as regras de criação de cada documento.
+Um resultado positivo não consulta cadastros oficiais e não confirma existência, situação cadastral ou titularidade do documento. O aplicativo não gera números e não valida cartões de crédito.
 
-## Instalação
+O projeto mantém duas flavors de distribuição: gratuita com anúncios (Free) e paga sem anúncios (Paid). Os application IDs Play existentes permanecem `br.com.helpdev.validador.v2.free` e `br.com.helpdev.validador.v2`.
 
-Utilize a PlayStore: 
+## Desenvolvimento
 
-[Validar e Gerar Documentos](https://play.google.com/store/apps/details?id=br.com.helpdev.validador.free)
+Use o wrapper Gradle:
+
+- `./gradlew assembleFreeDebug`
+- `./gradlew assemblePaidDebug`
+- `./gradlew testFreeDebugUnitTest testPaidDebugUnitTest`
+- `./gradlew connectedFreeDebugAndroidTest connectedPaidDebugAndroidTest` (requer emulador ou dispositivo)
 
 ## Contribuições
-Pedidos de pull são bem-vindos. Para alterações importantes, por favor, abra um problema primeiro para discutir o que você gostaria de mudar.
 
-## License
+Pull requests são bem-vindos. Para alterações importantes, abra uma issue antes para discutir o escopo.
+
+## Licença
+
 [Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)

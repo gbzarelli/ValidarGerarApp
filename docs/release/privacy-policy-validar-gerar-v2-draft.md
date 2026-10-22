@@ -1,15 +1,13 @@
-# Política de Privacidade — Validar e Gerar Documentos
+# Política de Privacidade — Validador de documentos
 
-**Vigência:** 14 de outubro de 2026
+**Vigência:** 22 de outubro de 2026
 **Versões abrangidas:** gratuita (`br.com.helpdev.validador.v2.free`) e paga (`br.com.helpdev.validador.v2`)
 
-Esta política descreve como o aplicativo **Validar e Gerar Documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso das versões gratuita e paga.
+Esta política descreve como o aplicativo **Validador de documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso das versões gratuita e paga. Este rascunho substitui a descrição anterior do aplicativo como gerador.
 
 ## Informações processadas pelo aplicativo
 
-O aplicativo permite validar e gerar números de CPF, CNPJ, PIS, cartão de crédito de teste e RENAVAM. Os valores digitados para validação e os valores gerados são processados localmente no dispositivo para executar essas funções. O aplicativo não envia esses valores aos servidores da Help DEV nem mantém um histórico ou uma conta de usuário.
-
-Se a pessoa usuária tocar no resultado gerado para copiá-lo, o aplicativo coloca esse texto na área de transferência do Android. A área de transferência é administrada pelo sistema operacional e pode ficar disponível a outros aplicativos conforme os recursos e as configurações do dispositivo. Evite copiar informações reais ou confidenciais.
+O aplicativo valida localmente o formato e os dígitos verificadores de CPF, CNPJ (incluindo o formato alfanumérico), PIS e RENAVAM. A verificação não consulta um cadastro oficial e não confirma a existência, a situação cadastral ou a titularidade de um documento. Os valores digitados são processados no dispositivo; o aplicativo não os envia aos servidores da Help DEV, não mantém histórico e não oferece conta de usuário. O aplicativo não gera números nem valida cartões de crédito.
 
 ## Anúncios e serviços do Google na versão gratuita
 

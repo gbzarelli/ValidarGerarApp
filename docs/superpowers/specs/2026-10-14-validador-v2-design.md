@@ -1,5 +1,7 @@
 # Validar e Gerar v2 — Design
 
+> Superseded on 2026-10-22 by the validation-only “Validador de documentos” direction in GitHub issue #4. This earlier spec describes the previous generation-enabled scope and must not be used for release implementation.
+
 ## Objetivo
 
 Modernizar o aplicativo Android Validar e Gerar e preparar duas novas publicações na Google Play: uma edição paga sem anúncios e uma edição gratuita com anúncios. As duas serão novos aplicativos, com novos identificadores de pacote e o mesmo nome público de publicação. O resultado deve compilar e funcionar nas versões Android suportadas, cumprir as exigências atuais da Play e permitir validar os fluxos em teste fechado antes da publicação em produção.
