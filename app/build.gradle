@@ -31,13 +31,12 @@ def credentialsFor = { String flavor ->
 }
 
 def freeSigningCredentials = credentialsFor('free')
-def paidSigningCredentials = credentialsFor('paid')
-def releaseSigningConfigured = freeSigningCredentials != null && paidSigningCredentials != null
+def releaseSigningConfigured = freeSigningCredentials != null
 
 def validateReleaseSigningInputs = tasks.register('validateReleaseSigningInputs') {
     doLast {
         if (!releaseSigningConfigured) {
-            throw new GradleException("Signed release artifacts require both v2 upload keystores and password files. Configure ${signingPropertiesFile} or set ANDROID_KEYS_DIR to the approved external signing directory.")
+            throw new GradleException("Signed release artifacts require the Free upload keystore and password file. Configure ${signingPropertiesFile} or set ANDROID_KEYS_DIR to the approved external signing directory.")
         }
     }
 }
@@ -55,10 +54,10 @@ android {
     namespace 'br.com.helpdev.validador'
     compileSdk 36
     defaultConfig {
-        applicationId "br.com.helpdev.validador"
+        applicationId "br.com.helpdev.validador.v3"
         minSdk 24
         targetSdk 36
-        versionCode 2
+        versionCode 1
         versionName "3.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -83,27 +82,15 @@ android {
                 keyPassword freeSigningCredentials.keyPassword
                 storeType freeSigningCredentials.storeType
             }
-            paidRelease {
-                storeFile paidSigningCredentials.storeFile
-                storePassword paidSigningCredentials.storePassword
-                keyAlias paidSigningCredentials.keyAlias
-                keyPassword paidSigningCredentials.keyPassword
-                storeType paidSigningCredentials.storeType
-            }
         }
     }
 
     flavorDimensions "default"
 
     productFlavors {
-        paid {
-            dimension "default"
-            applicationId "br.com.helpdev.validador.v2"
-            if (releaseSigningConfigured) signingConfig signingConfigs.paidRelease
-        }
         free {
             dimension "default"
-            applicationId "br.com.helpdev.validador.v2.free"
+            applicationId "br.com.helpdev.validador.v3"
             if (releaseSigningConfigured) signingConfig signingConfigs.freeRelease
         }
     }

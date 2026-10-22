@@ -1,9 +1,9 @@
 # Política de Privacidade — Validador de documentos
 
 **Vigência:** 22 de outubro de 2026
-**Versões abrangidas:** gratuita (`br.com.helpdev.validador.v2.free`) e paga (`br.com.helpdev.validador.v2`)
+**Versão abrangida:** gratuita com anúncios (`br.com.helpdev.validador.v3`)
 
-Esta política descreve como o aplicativo **Validador de documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso das versões gratuita e paga. Este rascunho substitui a descrição anterior do aplicativo como gerador.
+Esta política descreve como o aplicativo **Validador de documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso da edição gratuita. Este rascunho substitui a descrição anterior do aplicativo como gerador.
 
 ## Informações processadas pelo aplicativo
 
@@ -15,11 +15,10 @@ A versão gratuita integra o Google Mobile Ads SDK e a plataforma de consentimen
 
 O Google Mobile Ads SDK pode coletar e compartilhar automaticamente o endereço IP, interações com o aplicativo (por exemplo, abertura, toques e visualizações de anúncios), informações de diagnóstico e identificadores do dispositivo ou da conta, como o identificador de publicidade do Android, o App Set ID e, quando aplicável, outros identificadores associados a contas no dispositivo. Segundo o Google, esses dados são usados para publicidade, análise e prevenção a fraude e são transmitidos com criptografia TLS. O tratamento desses dados pelo Google também está sujeito à [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR) e à documentação de [divulgação de dados do Google Mobile Ads SDK](https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=pt-br).
 
-A versão paga não contém o Google Mobile Ads SDK nem o Google UMP e não exibe anúncios. A compra ou instalação da versão paga é processada pela Google Play, de acordo com os termos e avisos de privacidade da própria loja.
 
 ## Armazenamento e compartilhamento
 
-A Help DEV não recebe nem armazena em servidor os números digitados ou gerados pelo aplicativo. Na versão gratuita, os dados técnicos descritos acima são tratados pelo Google por meio dos serviços de anúncios. A Help DEV não vende esses dados. Informações poderão ser fornecidas quando isso for exigido por lei ou necessário para atender uma solicitação legal válida.
+A Help DEV não recebe nem armazena em servidor os números digitados pelo aplicativo. Os dados técnicos descritos acima são tratados pelo Google por meio dos serviços de anúncios. A Help DEV não vende esses dados. Informações poderão ser fornecidas quando isso for exigido por lei ou necessário para atender uma solicitação legal válida.
 
 O Google define seus próprios períodos de retenção e operações para os dados coletados por seus serviços. A Help DEV não controla a retenção feita pelo Google. Para informações sobre esses tratamentos, consulte os links oficiais do Google indicados nesta política.
 
