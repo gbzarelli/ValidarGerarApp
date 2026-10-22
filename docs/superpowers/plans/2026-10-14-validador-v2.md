@@ -1,5 +1,7 @@
 # Validar e Gerar v2 Implementation Plan
 
+> Superseded on 2026-10-22 by the validation-only “Validador de documentos” direction in GitHub issue #4. Its generation-enabled tasks and release assumptions are historical and must not be resumed.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Modernize the Android app and prepare two new Play releases: paid `br.com.helpdev.validador.v2` and ad-supported `br.com.helpdev.validador.v2.free`.

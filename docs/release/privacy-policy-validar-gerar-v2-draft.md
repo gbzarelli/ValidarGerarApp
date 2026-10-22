@@ -1,15 +1,13 @@
-# Política de Privacidade — Validar e Gerar Documentos
+# Política de Privacidade — Validador de documentos
 
-**Vigência:** 14 de outubro de 2026
-**Versões abrangidas:** gratuita (`br.com.helpdev.validador.v2.free`) e paga (`br.com.helpdev.validador.v2`)
+**Vigência:** 22 de outubro de 2026
+**Versão abrangida:** gratuita com anúncios (`br.com.helpdev.validador.v3`)
 
-Esta política descreve como o aplicativo **Validar e Gerar Documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso das versões gratuita e paga.
+Esta política descreve como o aplicativo **Validador de documentos**, desenvolvido e disponibilizado sob a marca Help DEV, trata informações durante o uso da edição gratuita. Este rascunho substitui a descrição anterior do aplicativo como gerador.
 
 ## Informações processadas pelo aplicativo
 
-O aplicativo permite validar e gerar números de CPF, CNPJ, PIS, cartão de crédito de teste e RENAVAM. Os valores digitados para validação e os valores gerados são processados localmente no dispositivo para executar essas funções. O aplicativo não envia esses valores aos servidores da Help DEV nem mantém um histórico ou uma conta de usuário.
-
-Se a pessoa usuária tocar no resultado gerado para copiá-lo, o aplicativo coloca esse texto na área de transferência do Android. A área de transferência é administrada pelo sistema operacional e pode ficar disponível a outros aplicativos conforme os recursos e as configurações do dispositivo. Evite copiar informações reais ou confidenciais.
+O aplicativo valida localmente o formato e os dígitos verificadores de CPF, CNPJ (incluindo o formato alfanumérico), PIS e RENAVAM. A verificação não consulta um cadastro oficial e não confirma a existência, a situação cadastral ou a titularidade de um documento. Os valores digitados são processados no dispositivo; o aplicativo não os envia aos servidores da Help DEV, não mantém histórico e não oferece conta de usuário. O aplicativo não gera números nem valida cartões de crédito.
 
 ## Anúncios e serviços do Google na versão gratuita
 
@@ -17,11 +15,10 @@ A versão gratuita integra o Google Mobile Ads SDK e a plataforma de consentimen
 
 O Google Mobile Ads SDK pode coletar e compartilhar automaticamente o endereço IP, interações com o aplicativo (por exemplo, abertura, toques e visualizações de anúncios), informações de diagnóstico e identificadores do dispositivo ou da conta, como o identificador de publicidade do Android, o App Set ID e, quando aplicável, outros identificadores associados a contas no dispositivo. Segundo o Google, esses dados são usados para publicidade, análise e prevenção a fraude e são transmitidos com criptografia TLS. O tratamento desses dados pelo Google também está sujeito à [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR) e à documentação de [divulgação de dados do Google Mobile Ads SDK](https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=pt-br).
 
-A versão paga não contém o Google Mobile Ads SDK nem o Google UMP e não exibe anúncios. A compra ou instalação da versão paga é processada pela Google Play, de acordo com os termos e avisos de privacidade da própria loja.
 
 ## Armazenamento e compartilhamento
 
-A Help DEV não recebe nem armazena em servidor os números digitados ou gerados pelo aplicativo. Na versão gratuita, os dados técnicos descritos acima são tratados pelo Google por meio dos serviços de anúncios. A Help DEV não vende esses dados. Informações poderão ser fornecidas quando isso for exigido por lei ou necessário para atender uma solicitação legal válida.
+A Help DEV não recebe nem armazena em servidor os números digitados pelo aplicativo. Os dados técnicos descritos acima são tratados pelo Google por meio dos serviços de anúncios. A Help DEV não vende esses dados. Informações poderão ser fornecidas quando isso for exigido por lei ou necessário para atender uma solicitação legal válida.
 
 O Google define seus próprios períodos de retenção e operações para os dados coletados por seus serviços. A Help DEV não controla a retenção feita pelo Google. Para informações sobre esses tratamentos, consulte os links oficiais do Google indicados nesta política.
 
