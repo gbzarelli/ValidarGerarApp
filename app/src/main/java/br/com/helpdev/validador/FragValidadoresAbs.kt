@@ -3,6 +3,7 @@ package br.com.helpdev.validador
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.core.text.HtmlCompat
 
 abstract class FragValidadoresAbs : Fragment(), View.OnClickListener {
 
@@ -27,10 +29,16 @@ abstract class FragValidadoresAbs : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.validateButton.setOnClickListener(this)
+        binding.officialSources.text = HtmlCompat.fromHtml(
+            getString(R.string.fontes_oficiais),
+            HtmlCompat.FROM_HTML_MODE_COMPACT
+        )
+        binding.officialSources.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onDestroyView() {
         binding.validateButton.setOnClickListener(null)
+        binding.officialSources.movementMethod = null
         views = null
         super.onDestroyView()
     }
@@ -75,5 +83,6 @@ abstract class FragValidadoresAbs : Fragment(), View.OnClickListener {
         val documentValue: EditText = root.findViewById(R.id.edit_valor_doc)
         val validateButton: View = root.findViewById(R.id.bt_validar)
         val validationResult: TextView = root.findViewById(R.id.tv_resultado_validar)
+        val officialSources: TextView = root.findViewById(R.id.tv_fontes_oficiais)
     }
 }

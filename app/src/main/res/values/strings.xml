@@ -8,7 +8,8 @@
     <string name="entre_com_valor">Entre com um valor</string>
     <string name="valor_valido">FORMATO E DÍGITOS VERIFICADORES COMPATÍVEIS</string>
     <string name="valor_invalido">FORMATO OU DÍGITOS VERIFICADORES NÃO CONFEREM</string>
-    <string name="escopo_validacao">A verificação é feita localmente e considera apenas o formato e os dígitos verificadores. Não consulta cadastro oficial nem confirma existência, situação ou titularidade do documento.</string>
+    <string name="escopo_validacao">Aplicativo independente, não afiliado nem representante de órgãos governamentais. A verificação é local e considera apenas formato e dígitos verificadores; não consulta cadastros oficiais nem confirma existência, situação ou titularidade.</string>
+    <string name="fontes_oficiais"><![CDATA[<b>Fontes oficiais para consulta externa</b><br/>O aplicativo não se conecta a estes serviços e não é endossado pelos órgãos citados.<br/><br/><a href="https://www.gov.br/pt-br/servicos/consultar-cadastro-de-pessoas-fisicas">CPF — Receita Federal</a><br/><a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico/cnpj-alfa">CNPJ alfanumérico — Receita Federal</a><br/><a href="https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/documentos-tecnicos/cnpj">Cálculo do dígito verificador do CNPJ — Receita Federal</a><br/><a href="https://www.gov.br/pt-br/servicos/realizar-inscricao-no-inss">PIS/NIT — INSS</a><br/><a href="https://www.gov.br/pt-br/servicos/consultar-dados-de-veiculo-na-base-renavam">RENAVAM — Senatran</a>]]></string>
 
     <string name="cpf">CPF</string>
     <string name="cnpj">CNPJ</string>

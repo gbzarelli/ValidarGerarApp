@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_validar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/documento"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
 
-    <Spinner
-        android:id="@+id/sp_docs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/lista_tipo_doc"
-        android:paddingTop="10dp"
-        android:spinnerMode="dialog"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/documento"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <EditText
-        android:id="@+id/edit_valor_doc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="@string/hint_valor_doc"
-        android:inputType="textCapCharacters"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/tv_escopo_validacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/escopo_validacao"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-    <Button
-        android:id="@+id/bt_validar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/validar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <Spinner
+            android:id="@+id/sp_docs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/lista_tipo_doc"
+            android:paddingTop="10dp"
+            android:spinnerMode="dialog"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TextView
-        android:id="@+id/tv_resultado_validar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edit_valor_doc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/hint_valor_doc"
+            android:inputType="textCapCharacters"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/escopo_validacao"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-</LinearLayout>
+        <Button
+            android:id="@+id/bt_validar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/validar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/tv_resultado_validar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fontes_oficiais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:paddingBottom="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </LinearLayout>
+</ScrollView>

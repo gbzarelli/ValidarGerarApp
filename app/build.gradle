@@ -57,8 +57,8 @@ android {
         applicationId "br.com.helpdev.validador.v3"
         minSdk 24
         targetSdk 36
-        versionCode 1
-        versionName "3.0.0"
+        versionCode 3
+        versionName "3.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
