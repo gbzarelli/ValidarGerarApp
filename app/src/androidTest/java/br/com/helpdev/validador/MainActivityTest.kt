@@ -4,6 +4,9 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import android.text.Spanned
+import android.text.style.URLSpan
+import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.com.helpdev.validador.EspressoUtils.checkErrorText
@@ -46,6 +49,48 @@ class MainActivityTest {
                 Assert.assertTrue(
                     "Main content should include the status-bar inset",
                     view.paddingTop >= originalPadding + topInset
+                )
+            }
+    }
+
+    @Test
+    fun showsIndependentLocalValidationDisclaimerAndOfficialSources() {
+        androidx.test.espresso.Espresso.onView(androidx.test.espresso.matcher.ViewMatchers.withId(R.id.layout_validar))
+            .check { view, _ ->
+                val sourceId = view.resources.getIdentifier("tv_fontes_oficiais", "id", view.context.packageName)
+                Assert.assertNotEquals("The official sources section should have a view", 0, sourceId)
+                val sourceView = view.findViewById<TextView>(sourceId)
+                Assert.assertNotNull("The official sources section should be present", sourceView)
+                val scopeView = view.findViewById<TextView>(R.id.tv_escopo_validacao)
+                Assert.assertTrue(scopeView.text.toString().contains("não afiliado"))
+                Assert.assertTrue(scopeView.text.toString().contains("nem confirma existência"))
+                val text = sourceView.text.toString()
+                Assert.assertTrue(text.contains("CPF"))
+                Assert.assertTrue(text.contains("CNPJ alfanumérico"))
+                Assert.assertTrue(text.contains("Cálculo do dígito verificador do CNPJ"))
+                Assert.assertTrue(text.contains("PIS/NIT"))
+                Assert.assertTrue(text.contains("RENAVAM"))
+                Assert.assertTrue(sourceView.linksClickable)
+                val sourceText = sourceView.text as Spanned
+                val links = sourceText.getSpans(0, sourceText.length, URLSpan::class.java)
+                Assert.assertEquals("Every listed identifier should link to an official source", 5, links.size)
+                val actualLinks = links.associate { link ->
+                    val label = sourceText.subSequence(
+                        sourceText.getSpanStart(link),
+                        sourceText.getSpanEnd(link)
+                    ).toString()
+                    label to link.url
+                }
+                Assert.assertEquals(
+                    "Each government source label should point to its intended official URL",
+                    mapOf(
+                        "CPF — Receita Federal" to "https://www.gov.br/pt-br/servicos/consultar-cadastro-de-pessoas-fisicas",
+                        "CNPJ alfanumérico — Receita Federal" to "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico/cnpj-alfa",
+                        "Cálculo do dígito verificador do CNPJ — Receita Federal" to "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/documentos-tecnicos/cnpj",
+                        "PIS/NIT — INSS" to "https://www.gov.br/pt-br/servicos/realizar-inscricao-no-inss",
+                        "RENAVAM — Senatran" to "https://www.gov.br/pt-br/servicos/consultar-dados-de-veiculo-na-base-renavam"
+                    ),
+                    actualLinks
                 )
             }
     }
